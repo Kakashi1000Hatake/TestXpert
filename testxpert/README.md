@@ -10,6 +10,3 @@ Currently, two official plugins are available:
 
 
 
-open ai accound : harsh.lakhanpal3@gmail.com
-password: 
-openAI api key : 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;
