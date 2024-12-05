@@ -1,8 +1,8 @@
-const express = require('express');
-const { getQuestions } = require('../controllers/questionsController');
+import express from 'express';
+import { getQuestions } from '../controllers/questionsController.js';
+
 const router = express.Router();
 
-// Define route for fetching questions
-router.get('/questions', getQuestions);
+router.get('/generate', getQuestions);  // Assuming 'getQuestions' is your controller function
 
-module.exports = router;
+export default router;  // This line exports the router as a default export
