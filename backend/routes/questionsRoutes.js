@@ -1,8 +1,8 @@
 import express from 'express';
-import { getQuestions } from '../controllers/questionsController.js';
+import { fetchQuestions } from '../controllers/questionsController.js';
 
 const router = express.Router();
 
-router.get('/generate', getQuestions);  // Assuming 'getQuestions' is your controller function
+router.get('/generate', fetchQuestions);
 
-export default router;  // This line exports the router as a default export
+export default router;

@@ -3,15 +3,23 @@ import { useParams } from 'react-router-dom';
 
 function TestPage() {
   const { subject } = useParams(); // Get the subject from the URL
+  const [examPattern,setexamPattern] = useState("Hp High Court Clerk")
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [score, setScore] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   useEffect(() => {
+
+    console.log(subject);
+    console.log(examPattern);
+    
+
     const fetchQuestions = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/generate-questions?subject=${subject}&examPattern=HP%20High%20Court%20Clerk`);
+        const response = await fetch(
+          `http://localhost:5000/api/questions/generate?subject=${subject}&examPattern=${examPattern}`
+        );
         const data = await response.json();
         const questionsText = data.questions;
 
